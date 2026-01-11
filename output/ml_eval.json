@@ -1,0 +1,21 @@
+{
+  "best_model": "linsvc",
+  "cv_accuracy_scores": [
+    0.75,
+    0.6875,
+    0.6875,
+    0.6875,
+    0.625
+  ],
+  "cv_accuracy_mean": 0.6875,
+  "confusion_matrix": [
+    [
+      11,
+      18
+    ],
+    [
+      7,
+      44
+    ]
+  ]
+}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8 text-center">
+    <div class="card">
+      <div class="card-body py-5">
+        <div class="spinner-border text-primary mb-4" role="status" style="width: 4rem; height: 4rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h3 class="mb-3">Pipeline Running...</h3>
+        <p class="text-muted mb-4">Processing with <strong>{{ algorithm }}</strong> algorithm</p>
+        
+        <div class="progress mb-4" style="height: 25px;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%">
+            Please wait... This may take 1-2 minutes
+          </div>
+        </div>
+        
+        <div class="alert alert-info">
+          <strong>What's happening:</strong>
+          <ul class="text-start mb-0">
+            <li>Indexing novels with sliding window chunking</li>
+            <li>Extracting claims from backstories (Gemini API or fallback)</li>
+            <li>Verifying claims against novel context</li>
+            <li>Generating results with clear rationales</li>
+          </ul>
+        </div>
+        
+        <p class="text-muted small">This page will automatically redirect to results when complete.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Auto-refresh every 3 seconds to check status
+  setTimeout(function() {
+    window.location.reload();
+  }, 3000);
+</script>
+{% endblock %}
